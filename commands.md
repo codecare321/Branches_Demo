@@ -157,3 +157,148 @@ Current latest committ point
 These files are also called as untracked files
 
 if you want to see all branch right `git branch`
+
+for deleting previous error for previous account.
+
+To simplify and add into it, one can follow below simple steps:
+
+Remove all GitHub entries from (Windows) Credential Manager
+Set useHttpPath = true in Git global configuration
+git config --global credential.useHttpPath true
+
+You can validate this by checking
+
+git config --global -e
+
+This will create a different entry for each user account.
+
+for new branches make use `git checkout -b Feature_1`
+
+for checking code of main
+we can do
+`git checkout main`
+
+`git log` -> check the commit
+
+`git commit `-> in main
+so whatever your last main and when you do new branch according to last main it will take code of that
+
+for creating new branch you have to do `git checkout -b Feature_1(name of your branch)`
+
+in github you are able to see only one branch main
+
+can you figure out why?
+
+you have never told github that you have new branch.
+
+you can do this
+
+`git push origin Feature_1`
+
+the recommonded practice for industry is
+
+Now,How can we merge the change?
+
+Feature \_1 is done now this code need to merge in main branch
+
+then first go to in master branch
+
+`git checkout main`
+
+`git merge Feature_1`
+
+for your merge:
+
+Very Very important Thing
+
+when one of your teammate make changes suppose in master and you have make him as collabrotor so he add one file but in your local you dont aware of that code and you also making file for main
+
+how can you get that your friend channges code?
+
+so your local repo dont know about that file how you will get?
+
+in this situation if you try to push the code it will not allow.
+
+let s see
+
+`git status`
+
+`On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	algo.js
+	commands.md`
+
+git add ann commit will work
+
+when i do `git push origin main`
+
+`! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/codecare321/Branches_Demo.git'`
+
+`
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref`
+
+before we have to push the code
+
+never do forcefully push if you do that then your team mate push will be vanished
+
+viilation of everything softtware engineer tell
+
+what use case you have to do?
+
+we have to do all latest commit to be get as we do as collabrator
+
+so what i can do?
+
+`git pull origin main`
+
+and those commit will be added
+
+before the pull in your code if you have added anything in that you have to do merge otherwisse alsos it give problem
+
+if you have 2 people in your team always do (as collabrator)
+
+git add
+git commit
+git pull
+then
+git push
+
+never do git push directiy
+
+now let me make another teammate2.js which added by other
+
+now i am add one file in my local
+
+now i am doing git pull and somebody else added as team to code
+
+now you do new_algo.js(from your local file you are trying to add)
+
+so you have to add that and commit and thenn do `git pull origin main`
+`git push origin main`
+
+what is merge conflict?
+2 or more people trying to do same code base same line code change try to do git push then it will conflict the code.
+
+suppose you are pulling the code in test.js and when you do pull git reliaize that for both code for line number 4 are conflicting
+
+you have to resolve the prolblem.
+
+fix the conflict then merge it
+
+`git branch` will show branch
+
+we never do merge and push from feature branch
+
+What is the correct way to do that?
+
+`pull request`
+
+it is extresmly wrong without feature reviwing push the code
+
+github allow to put the review that without allow it can not be push the code
+
+create a pull request
